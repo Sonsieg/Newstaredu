@@ -24,6 +24,7 @@ export default class Login extends Component {
       data: [],
       isShow: false,
       quenmatkhau: '',
+      // storeData:null
     };
   }
   handleEmail = (text) => {
@@ -39,6 +40,27 @@ export default class Login extends Component {
   };
   // email: 'company@unica.vn',
   // password: 'zibaca@1A'
+  storeData = async (value) => {
+    try {
+      const jsonValue = JSON.stringify(value);
+      await AsyncStorage.setItem('@token', jsonValue);
+    } catch (e) {
+      // saving error
+    }
+  };
+  getData = async () => {
+    try {
+      const jsonValue = await AsyncStorage.getItem('@token');
+      if (jsonValue != null) {
+        this.props.navigation.replace("Taikhoan");
+      }
+    } catch (e) {
+      // error reading value
+    }
+  };
+  componentDidMount(){
+      this.getData()
+  }
   signin = async () => {
     try {
       const response = await fetch('https://acabiz.vn/api/auth/login', {
@@ -55,6 +77,7 @@ export default class Login extends Component {
       // console.log(response);
       const jsonData = await response.json();
       console.log(jsonData);
+      // await AsyncStorage.setItem('@storage_Token', '123456789');
 
       console.log('----------------------');
       if (jsonData.status == 404) {
@@ -64,9 +87,9 @@ export default class Login extends Component {
       }  else if ( jsonData.status == 200 ){
         this.setState({data: jsonData.data.user});
         console.log(jsonData.data.token)
-        await AsyncStorage.setItem('@storage_Token', '123456789');
-        this.props.navigation.navigate("Taikhoan");
-        useA
+        // this.setState({storeData:jsonData.data.token})
+        this.storeData(jsonData.data.token)
+        this.props.navigation.replace("Taikhoan");
       }
       else Alert.alert('Sap sever')
     } catch (e) {
