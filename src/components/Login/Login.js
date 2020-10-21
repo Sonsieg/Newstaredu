@@ -127,10 +127,10 @@ export default class Login extends Component {
               justifyContent: 'flex-start',
               backgroundColor: '#191970',
             }}>
-            {/* <Image
+            <Image
               style={{marginHorizontal: scale(20), marginTop: scale(14)}}
               source={require('../images/user.png')}
-            /> */}
+            />
             <TextInput
               style={styles.input}
               placeholder="Email"

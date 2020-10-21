@@ -1,6 +1,7 @@
 import AsyncStorage from '@react-native-community/async-storage';
 import React, {Component} from 'react';
-import {Image, Text, Switch, TouchableOpacity, View} from 'react-native';
+import {Image, Text, Switch, TouchableOpacity, View, Alert} from 'react-native';
+import Login from '../Login/Login';
 import {scale, vScale} from '../ScaleSheet';
 // import { Switch } from 'react-native-paper';
 
@@ -9,6 +10,7 @@ export default class Taikhoan extends Component {
     super(props);
     this.state = {
       onSwitch: false,
+      timePassed: false
     };
   }
   // toggleSwitch (){
@@ -16,11 +18,70 @@ export default class Taikhoan extends Component {
   //         onSwitch: !this.state.onSwitch
   //     })
   // }
-  componentDidMount(){
-    let test = AsyncStorage.getItem("@storage_Token");
-    console.log(test)
-}
+  // storeData = async (value) => {
+  //   try {
+  //     const jsonValue = JSON.stringify(value);
+  //     await AsyncStorage.setItem('@token', jsonValue);
+  //   } catch (e) {
+  //     // saving error
+  //   }
+  // };
+  // getData = async () => {
+  //   try {
+  //     const jsonValue = await AsyncStorage.getItem('@token');
+  //     if (jsonValue != null) {
+  //       this.props.navigation.replace("Taikhoan");
+  //     }
+  //   } catch (e) {
+  //     // error reading value
+  //   }
+  // };
+  // logout = async () => {
+  //   try {
+  //     const response = await fetch('https://acabiz.vn/api/auth/logout', {
+  //       method: 'POST',
+  //       headers: {
+  //         Accept: 'application/json',
+  //         'Content-Type': 'application/json',
+  //       },
+  //     });
+  //     // console.log(response);
+  //     const jsonData = await response.json();
+  //     console.log(jsonData);
+
+  //     console.log('----------------------');
+  //     if (jsonData.status == 400) {
+  //       Alert.alert('Đăng xuất thất bại, vui lòng thử lại');
+  //     }  else if ( jsonData.status == 200 ){
+  //       // this.setState({data: jsonData.data.user});
+  //       // console.log(jsonData.data.token)
+  //       // this.storeData(jsonData.data.token)
+  //       this.props.navigation.replace("Login");
+  //       this.getData(jsonValue == null)
+  //     }
+  //     else Alert.alert('Sever bị sập')
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
+  getData = async () => {
+    const jsonValue = await AsyncStorage.getItem('@token');
+    console.log(jsonValue);
+  };
+  logout = async () => {
+    AsyncStorage.removeItem('@token');
+    this.props.navigation.replace('Login');
+    this.getData();
+  };
+
+  // componentDidMount(){
+  //   this.getData();
+  // }
   render() {
+    // setTimeout(function(){this.setState({timePassed: true})}, 100);
+    // if (!this.state.timePassed){
+    //   return <Login/>;
+    // }else{
     return (
       <View>
         <View
@@ -56,7 +117,15 @@ export default class Taikhoan extends Component {
                 marginTop: scale(16),
                 marginHorizontal: scale(20),
               }}>
-              {/* <Image resizeMode="contain" style={{ width: scale(60), height: vScale(60), borderRadius: scale(50) }} source={require('../images/avatar.jpg')} /> */}
+              <Image
+                resizeMode="contain"
+                style={{
+                  width: scale(60),
+                  height: vScale(60),
+                  borderRadius: scale(50),
+                }}
+                source={require('../images/avatar.jpg')}
+              />
               <View style={{marginLeft: scale(16)}}>
                 <Text style={{fontSize: 18}}>Đặng Anh Sơn</Text>
                 <Text
@@ -69,14 +138,14 @@ export default class Taikhoan extends Component {
                 </Text>
               </View>
             </View>
-            {/* <Image
+            <Image
               style={{
-                width: scale(30),
-                height: vScale(30),
-                marginTop: scale(20),
+                // width: scale(30),
+                // height: vScale(30),
+                marginTop: scale(25),
               }}
               source={require('../images/next.png')}
-            /> */}
+            />
           </View>
         </TouchableOpacity>
         <View
@@ -125,4 +194,5 @@ export default class Taikhoan extends Component {
       </View>
     );
   }
+// }
 }

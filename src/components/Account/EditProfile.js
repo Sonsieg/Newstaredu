@@ -40,10 +40,10 @@ export default class EditProfile extends Component {
             // justifyContent:"space-evenly"
           }}>
           <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
-            {/* <Image
+            <Image
               source={require('../images/back.png')}
               style={{marginLeft: scale(16)}}
-            /> */}
+            />
           </TouchableOpacity>
           <View style={{justifyContent: 'flex-end'}}>
             <Text
