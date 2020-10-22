@@ -10,7 +10,8 @@ export default class Taikhoan extends Component {
     super(props);
     this.state = {
       onSwitch: false,
-      timePassed: false
+      timePassed: false,
+      
     };
   }
   // toggleSwitch (){
@@ -72,6 +73,7 @@ export default class Taikhoan extends Component {
     AsyncStorage.removeItem('@token');
     this.props.navigation.replace('Login');
     this.getData();
+    setTimeout: 1000;
   };
 
   // componentDidMount(){

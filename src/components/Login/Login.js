@@ -52,7 +52,7 @@ export default class Login extends Component {
     try {
       const jsonValue = await AsyncStorage.getItem('@token');
       if (jsonValue != null) {
-        this.props.navigation.replace("Taikhoan");
+        this.props.navigation.replace("Router");
       }
     } catch (e) {
       // error reading value
@@ -89,7 +89,7 @@ export default class Login extends Component {
         console.log(jsonData.data.token)
         // this.setState({storeData:jsonData.data.token})
         this.storeData(jsonData.data.token)
-        this.props.navigation.replace("Taikhoan");
+        this.props.navigation.replace("Router");
       }
       else Alert.alert('Sap sever')
     } catch (e) {
