@@ -27,15 +27,16 @@ function Router() {
         }}
       />
       <Tab.Screen
-        name="Baocao"
-        component={Baocao}
+        name="Vaohoc"
+        component={Vaohoc}
         options={{
           tabBarLabel: '',
           tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons style={{paddingTop:scale(14)}} name="file-question" color="#1e90ff" size={size*1.3} />
+            <MaterialCommunityIcons style={{paddingTop:scale(14)}} name="book-open-variant" color="#1e90ff" size={size*1.3} />
           ),
         }}
       />
+      
       <Tab.Screen
         name="Baikiemtra"
         component={Baikiemtra}
@@ -47,12 +48,12 @@ function Router() {
         }}
       />
       <Tab.Screen
-        name="Vaohoc"
-        component={Vaohoc}
+        name="Baocao"
+        component={Baocao}
         options={{
           tabBarLabel: '',
           tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons style={{paddingTop:scale(14)}} name="book-open-variant" color="#1e90ff" size={size*1.3} />
+            <MaterialCommunityIcons style={{paddingTop:scale(14)}} name="file-question" color="#1e90ff" size={size*1.3} />
           ),
         }}
       />
