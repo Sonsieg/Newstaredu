@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {
-  Button,
   Image,
   ScrollView,
   Text,
@@ -10,7 +9,7 @@ import {
   StyleSheet,
   FlatList,
 } from 'react-native';
-import {scale, vScale} from '../ScaleSheet';
+import {scale, vScale} from '../../ScaleSheet';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 export default class Trangchu extends Component {
   constructor(props) {
@@ -48,10 +47,10 @@ export default class Trangchu extends Component {
 
   render() {
     const SonItem = ({item,index}) => (
-      <View>
-        <Image source={{uri:"https://" + this.props.data.image}}></Image>
+      <ScrollView>
+        <Image style={{width: scale(120), height: vScale(50)}} source={require('../../assets/images/girl.png')}></Image>
 
-      </View>
+      </ScrollView>
       );
     return (
       <View>
@@ -74,7 +73,7 @@ export default class Trangchu extends Component {
               borderColor: '#b0c4de',
             }}>
             <Image
-              source={require('../images/search.png')}
+              source={require('../../assets/images/search.png')}
               style={{marginHorizontal: scale(12)}}
             />
             <TextInput
@@ -191,10 +190,20 @@ export default class Trangchu extends Component {
           </View>
           <FlatList
             horizontal={true}
-            data={this.state.subjectList}
+            data={
+              {
+                id: 1,
+                name: "hello"
+              },
+              {
+                id: 2,
+                name: "ddd"
+              }
+            }
             renderItem={({item, index}) => {
               return <SonItem item={item} index={index}></SonItem>;
-            }}></FlatList>
+            }}/>
+
         </ScrollView>
       </View>
     );

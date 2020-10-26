@@ -7,7 +7,7 @@ import {
   ScrollView,
   TextInput,
 } from 'react-native';
-import { scale, vScale } from '../ScaleSheet';
+import { scale, vScale } from '../../ScaleSheet';
 //import Icon from 'react-native-vector-icons/FontAwesome5';
 export default class EditProfile extends Component {
   constructor(props) {
@@ -41,7 +41,7 @@ export default class EditProfile extends Component {
           }}>
           <TouchableOpacity onPress={() => this.props.navigation.goBack()}>
             <Image
-              source={require('../images/back.png')}
+              source={require('../../assets/images/back.png')}
               style={{marginLeft: scale(16)}}
             />
           </TouchableOpacity>
@@ -74,7 +74,7 @@ export default class EditProfile extends Component {
                 height: vScale(80),
                 borderRadius: scale(80),
               }}
-              source={require('../images/avatar.jpg')}
+              source={require('../../assets/images/avatar.jpg')}
             />
             <View style={{justifyContent: 'center'}}>
               <Text style={{textAlign: 'center', fontSize: 20}}>

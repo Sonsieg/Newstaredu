@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {Text, View} from 'react-native';
-import { scale, vScale } from '../ScaleSheet';
+import { Text, View } from 'react-native';
+import { scale, vScale } from '../../ScaleSheet';
 
-export default class Vaohoc extends Component {
+export default class Baocao extends Component {
   render() {
     return (
       <View>
@@ -20,7 +20,7 @@ export default class Vaohoc extends Component {
               textAlign: 'center',
               paddingTop: scale(10),
             }}>
-            Khóa học của tôi
+            Báo cáo học tập
           </Text>
         </View>
       </View>

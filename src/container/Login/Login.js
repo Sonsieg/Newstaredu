@@ -14,7 +14,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { scale, vScale } from '../ScaleSheet';
+import { scale, vScale } from '../../ScaleSheet';
 export default class Login extends Component {
   constructor(props) {
     super(props);
@@ -103,7 +103,7 @@ export default class Login extends Component {
     return (
       <ImageBackground
         style={{width: '100%', height: '100%'}}
-        source={require('../images/login-bg.jpg')}>
+        source={require('../../assets/images/login-bg.jpg')}>
           <ScrollView>
         <View style={{}}>
           <Image
@@ -112,7 +112,7 @@ export default class Login extends Component {
               width: scale(360),
               marginTop: vScale(100),
             }}
-            source={require('../images/logo-login.png')}></Image>
+            source={require('../../assets/images/logo-login.png')}></Image>
         </View>
         <View style={{}}>
           <View
@@ -129,7 +129,7 @@ export default class Login extends Component {
             }}>
             <Image
               style={{marginHorizontal: scale(20), marginTop: scale(14)}}
-              source={require('../images/user.png')}
+              source={require('../../assets/images/user.png')}
             />
             <TextInput
               style={styles.input}
@@ -157,7 +157,7 @@ export default class Login extends Component {
             }}>
             <Image
               style={{marginHorizontal: scale(20), marginTop: scale(14)}}
-              source={require('../images/lock.png')}
+              source={require('../../assets/images/lock.png')}
             />
             <TextInput
               style={styles.input}
@@ -210,7 +210,7 @@ export default class Login extends Component {
             <Image
               resizeMode="contain"
               style={{width: scale(40), height: scale(40)}}
-              source={require('../images/touch-id.png')}></Image>
+              source={require('../../assets/images/touch-id.png')}></Image>
           </TouchableOpacity>
         </View>
         <Modal

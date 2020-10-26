@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import { Text, View } from 'react-native';
-import { scale, vScale } from '../ScaleSheet';
+import {Text, View} from 'react-native';
+import { scale, vScale } from '../../ScaleSheet';
 
-export default class Baocao extends Component {
+export default class Baikiemtra extends Component {
   render() {
     return (
       <View>
@@ -20,7 +20,7 @@ export default class Baocao extends Component {
               textAlign: 'center',
               paddingTop: scale(10),
             }}>
-            Báo cáo học tập
+            Bài trắc nghiệm
           </Text>
         </View>
       </View>

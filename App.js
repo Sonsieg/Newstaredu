@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Login from './src/components/Login/Login';
-import Taikhoan from './src/components/Account/Taikhoan';
-import EditProfile from './src/components/Account/EditProfile';
-import Router from './src/components/router';
+import Login from './src/container/Login/Login';
+import Taikhoan from './src/container/Account/Taikhoan';
+import EditProfile from './src/container/Account/EditProfile';
+import Router from './src/router';
 
 const StackNavigator = createStackNavigator();
 

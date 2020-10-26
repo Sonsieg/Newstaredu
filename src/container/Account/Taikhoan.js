@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import React, {Component} from 'react';
 import {Image, Text, Switch, TouchableOpacity, View, Alert} from 'react-native';
 import Login from '../Login/Login';
-import {scale, vScale} from '../ScaleSheet';
+import {scale, vScale} from '../../ScaleSheet';
 // import { Switch } from 'react-native-paper';
 
 export default class Taikhoan extends Component {
@@ -126,7 +126,7 @@ export default class Taikhoan extends Component {
                   height: vScale(60),
                   borderRadius: scale(50),
                 }}
-                source={require('../images/avatar.jpg')}
+                source={require('../../assets/images/avatar.jpg')}
               />
               <View style={{marginLeft: scale(16)}}>
                 <Text style={{fontSize: 18}}>Đặng Anh Sơn</Text>
@@ -146,7 +146,7 @@ export default class Taikhoan extends Component {
                 // height: vScale(30),
                 marginTop: scale(25),
               }}
-              source={require('../images/next.png')}
+              source={require('../../assets/images/next.png')}
             />
           </View>
         </TouchableOpacity>
